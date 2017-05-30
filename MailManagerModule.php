@@ -1,3 +1,5 @@
+<?php
+
 namespace evandro\modules\MailManager;
 
 class MailManagerModule extends \yii\base\Module
