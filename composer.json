@@ -1,11 +1,13 @@
 {
-	"name": "evandro/mailmanager",
-	"autoload": {
-		"psr-4": {
-			"evandro\\modules\\MailManager\\": ""
-		}
-	},
-	"require": {
-	}
+    "name": "evandro/mailmanager",
+    "autoload": {
+        "psr-4": {
+            "evandro\\modules\\MailManager\\": ""
+        }
+    },
+    "minimu-stability": "stable",
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "~2.0.5"
+    }
 }
-
