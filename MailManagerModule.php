@@ -1,9 +1,10 @@
 <?php
 
-namespace evandro\modules\MailManager;
+namespace evandro\mailmanager;
 
 class MailManagerModule extends \yii\base\Module
 {
+    
     public function init()
     {
         parent::init();

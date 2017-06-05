@@ -1,6 +1,6 @@
 <?php
 
-namespace evandro\modules\MailManager\controllers;
+namespace evandro\mailmanager\controllers;
 
 use yii\web\Controller;
 
