@@ -2,7 +2,7 @@
 
 namespace evandro\modules\MailManager\controllers;
 
-use yii\base\Controller;
+use yii\web\Controller;
 
 class DefaultController extends Controller
 {

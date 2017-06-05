@@ -14,7 +14,7 @@ class m170601_132616_create_mm_email_table extends Migration
     {
         $this->createTable('mm_email', [
             'id' => $this->primaryKey(),
-            'from' => $this->email()->string()->notNull(),
+            'from' => $this->string()->notNull(),
             'to' => $this->string()->notNull(),
             'subject' => $this->string()->notNull(),
             'body' => $this->text()->notNull(),
