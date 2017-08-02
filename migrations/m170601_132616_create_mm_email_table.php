@@ -18,6 +18,7 @@ class m170601_132616_create_mm_email_table extends Migration
             'to' => $this->string()->notNull(),
             'subject' => $this->string()->notNull(),
             'body' => $this->text()->notNull(),
+            'status' => $this->string(),
         ]);
     }
 

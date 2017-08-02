@@ -4,7 +4,6 @@ namespace evandro\mailmanager\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use evandro\mailmanager\models\Email;
 
 /**
  * EmailSearch represents the model behind the search form about `evandro\mailmanager\models\Email`.
@@ -18,7 +17,7 @@ class EmailSearch extends Email
     {
         return [
             [['id'], 'integer'],
-            [['from', 'to', 'subject', 'body'], 'safe'],
+            [['from', 'to', 'subject', 'body', 'status'], 'safe'],
         ];
     }
 
@@ -64,7 +63,8 @@ class EmailSearch extends Email
         $query->andFilterWhere(['like', 'from', $this->from])
             ->andFilterWhere(['like', 'to', $this->to])
             ->andFilterWhere(['like', 'subject', $this->subject])
-            ->andFilterWhere(['like', 'body', $this->body]);
+            ->andFilterWhere(['like', 'body', $this->body])
+            ->andFilterWhere(['like', 'status', $this->status]);
 
         return $dataProvider;
     }
