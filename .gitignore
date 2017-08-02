@@ -1,2 +1,6 @@
 *.swp
 vendor
+.buildpath
+.project
+.settings/
+composer.lock
