@@ -55,31 +55,4 @@ class Email extends \yii\db\ActiveRecord
             'status' => Yii::t('app', 'Status'),
         ];
     }
-    
-    /**
-     * Sends this email and saves it to the database
-     */
-    public function send()
-    {
-        // set status to Email::STATUS_PENDING
-        $this->status = self::STATUS_PENDING;
-        $this->save();
-
-        // try send the email
-        $result = Yii::$app->mailer->compose()
-            ->setFrom($this->from)
-            ->setTo($this->to)
-            ->setSubject($this->subject)
-            ->setTextBody($this->body)
-            ->send();
-        
-        if ($result) {
-            $this->status = self::STATUS_SENDT;
-            // TODO add date time and who sendt the email
-        } else {
-            $this->status = self::STATUS_FAILED;
-            // TODO add date time and who sendt the email
-        }
-        $this->save();
-    }
 }
