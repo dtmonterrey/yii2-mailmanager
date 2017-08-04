@@ -1,14 +1,15 @@
 {
-    "name": "evandro/mailmanager",
-    "autoload": {
-        "psr-4": {
-            "evandro\\mailmanager\\": ""
-        }
-    },
-    "minimu-stability": "stable",
-    "require": {
-        "php": ">=5.4.0",
-        "yiisoft/yii2": "~2.0.5",
-        "webvimark/module-user-management": "^1.0"
-    }
+	"name" : "evandro/mailmanager",
+	"autoload" : {
+		"psr-4" : {
+			"evandro\\mailmanager\\" : ""
+		}
+	},
+	"minimu-stability" : "stable",
+	"require" : {
+		"php" : ">=5.4.0",
+		"yiisoft/yii2" : "~2.0.5",
+		"webvimark/module-user-management" : "^1.0",
+		"yiisoft/yii2-swiftmailer" : "~2.0"
+	}
 }
