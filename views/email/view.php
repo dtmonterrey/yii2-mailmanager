@@ -23,6 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'subject',
             'body:ntext',
             'status',
+            'when',
         ],
     ]) ?>
 
