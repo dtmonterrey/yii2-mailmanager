@@ -17,7 +17,7 @@ class EmailSearch extends Email
     {
         return [
             [['id'], 'integer'],
-            [['from', 'to', 'subject', 'body', 'status'], 'safe'],
+            [['from', 'to', 'subject', 'body', 'status', 'when'], 'safe'],
         ];
     }
 
@@ -58,6 +58,7 @@ class EmailSearch extends Email
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'when' => $this->when,
         ]);
 
         $query->andFilterWhere(['like', 'from', $this->from])

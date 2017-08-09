@@ -37,6 +37,7 @@ class Email extends \yii\db\ActiveRecord
         return [
             [['from', 'to', 'subject', 'body'], 'required'],
             [['body'], 'string'],
+            [['when'], 'safe'],
             [['from', 'to', 'subject', 'status'], 'string', 'max' => 255],
         ];
     }
@@ -53,6 +54,7 @@ class Email extends \yii\db\ActiveRecord
             'subject' => Yii::t('app', 'Subject'),
             'body' => Yii::t('app', 'Body'),
             'status' => Yii::t('app', 'Status'),
+            'when' => Yii::t('app', 'When'),
         ];
     }
 }
