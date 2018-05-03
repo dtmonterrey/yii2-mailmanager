@@ -47,7 +47,7 @@ class Message extends \yii\swiftmailer\Message
             $email->to = $this->getTo();
         }
         $email->subject = $this->getSubject();
-        $email->body = $this->getSwiftMessage()->getBody();
+        $email->body = $this->toString();
         
         // set status to Email::STATUS_PENDING and save
         $email->status = Email::STATUS_PENDING;
