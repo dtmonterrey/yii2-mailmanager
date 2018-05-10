@@ -1,6 +1,7 @@
 {
-	"name" : "evandro/mailmanager",
+	"name" : "evandro/yii2-mailmanager",
 	"version" : "0.1.2",
+    "type": "yii2-extension",
 	"autoload" : {
 		"psr-4" : {
 			"evandro\\mailmanager\\" : ""
