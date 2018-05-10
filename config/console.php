@@ -4,6 +4,7 @@
 $config = [
     'id' => 'evandro-mailmanager',
     'basePath' => dirname(__DIR__),
+    'version' => '0.2.0',
     'bootstrap' => ['log'],
     'controllerNamespace' => 'app\commands',
     'components' => [
