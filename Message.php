@@ -9,6 +9,10 @@ use yii\mail\MailerInterface;
 
 class Message extends \yii\swiftmailer\Message
 {
+    private $dbEmailBodyPlain = null;
+    private $dbEmailBodyHtml = null;
+    private $dbEmailBody = null;
+    
     /**
      * Sends this email message.
      * @param MailerInterface $mailer the mailer that should be used to send this message.
@@ -20,6 +24,7 @@ class Message extends \yii\swiftmailer\Message
     {   
         // create email model object
         $email = new Email();
+        
         // format FROM for storing in db
         if (is_array($this->getFrom())) {
             foreach ($this->getFrom() as $from_email => $from_name) {
@@ -33,6 +38,7 @@ class Message extends \yii\swiftmailer\Message
         } else {
             $email->from = $this->getFrom();
         }
+        
         // format TO for storing in db
         if (is_array($this->getTo())) {
             foreach ($this->getTo() as $to_email => $to_name) {
@@ -47,7 +53,15 @@ class Message extends \yii\swiftmailer\Message
             $email->to = $this->getTo();
         }
         $email->subject = $this->getSubject();
-        $email->body = $this->toString();
+        
+        // set body
+        if (isset($this->dbEmailBodyHtml)) {
+            $email->body = $this->dbEmailBodyHtml;
+        } else if (isset($this->dbEmailBodyPlain)) {
+            $email->body = $this->dbEmailBodyPlain;
+        } else if (isset($this->dbEmailBody)) {
+            $email->body = $this->dbEmailBody;
+        }
         
         // set status to Email::STATUS_PENDING and save
         $email->status = Email::STATUS_PENDING;
@@ -72,6 +86,22 @@ class Message extends \yii\swiftmailer\Message
         return $result;
     }
     
+    protected function setBody($body, $contentType)
+    {
+        parent::setBody($body, $contentType);
+        switch ($contentType) {
+            case 'text/plain':
+                $this->dbEmailBodyPlain = $body;
+                break;
+            case 'text/html':
+                $this->dbEmailBodyHtml = $body;
+                break;
+            default:
+                $this->dbEmailBody = $body;
+                break;
+        }
+    }
+    
     private function _send(MailerInterface $mailer = null)
     {
         if ($mailer === null && $this->mailer === null) {
@@ -79,6 +109,12 @@ class Message extends \yii\swiftmailer\Message
         } elseif ($mailer === null) {
             $mailer = $this->mailer;
         }
-        return $mailer->send($this);
+        try {
+            $mailer->send($this);
+        } catch (\Exception $e) {
+            print $e;
+            return false;
+        }
+        return true;
     }
 }

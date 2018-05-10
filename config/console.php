@@ -2,10 +2,11 @@
 
 
 $config = [
-    'id' => 'basic-console',
+    'id' => 'evandro-mailmanager',
     'basePath' => dirname(__DIR__),
+    'version' => '0.2.0',
     'bootstrap' => ['log'],
-    'controllerNamespace' => 'app\evandro\controllers',
+    'controllerNamespace' => 'app\commands',
     'components' => [
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -17,6 +18,10 @@ $config = [
                     'levels' => ['error', 'warning'],
                 ],
             ],
+        ],
+        'db' => [
+            'class' => 'yii\db\Connection',
+            'dsn' => 'sqlite:runtime/database.db',
         ],
     ],
     'modules'=>[
