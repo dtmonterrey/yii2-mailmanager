@@ -12,6 +12,19 @@ Just run migrations like
 $ ./yii migrate --migrationPath=vendor/evandro/mailmanager/migrations
 ```
 
+Or configure multiple paths on the migration controller from the console application
+```
+'controllerMap' => [
+    'migrate' => [
+        'class' => 'yii\console\controllers\MigrateController',
+        'migrationPath' => [
+            '@app/migrations',
+              '@vendor/evandro/mailmanager/migrations',
+        ],
+    ],
+],
+```
+
 Usage
 -----
 
@@ -48,8 +61,3 @@ It inherits from yii\swiftmailer\Mailer so you can use the following config
     ],
 ],
 ```
-
-Version
--------
-
-Version 0.1.0
