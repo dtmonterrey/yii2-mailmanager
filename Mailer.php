@@ -8,6 +8,5 @@ class Mailer extends \yii\swiftmailer\Mailer
     
     public function init() {
         parent::init();
-        $this->useFileTransport = true;
     }
 }
