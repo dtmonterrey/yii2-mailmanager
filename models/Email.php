@@ -57,4 +57,21 @@ class Email extends \yii\db\ActiveRecord
             'when' => Yii::t('app', 'When'),
         ];
     }
+    
+    /**
+     * 
+     * {@inheritDoc}
+     * @see \yii\db\BaseActiveRecord::beforeSave()
+     */
+    public function beforeSave($insert)
+    {
+        if (!parent::beforeSave($insert)) {
+            return false;
+        }
+        
+        if (!isset($this->status)) {
+            $this->status = static::STATUS_PENDING;
+        }
+        return true;
+    }
 }
