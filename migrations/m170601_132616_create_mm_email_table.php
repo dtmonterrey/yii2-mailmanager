@@ -21,6 +21,9 @@ class m170601_132616_create_mm_email_table extends Migration
             'status' => $this->string(),
             'when' => $this->timestamp(),
         ]);
+        
+        // create index for faster queries
+        $this->createIndex('idx_mm_email_status', 'mm_email', ['status']);
     }
 
     /**
