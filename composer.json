@@ -1,7 +1,7 @@
 {
-	"name" : "evandro/yii2-mailmanager",
+	"name" : "dtmonterrey/yii2-mailmanager",
 	"version" : "0.3.1",
-    "type": "yii2-extension",
+	"type" : "yii2-extension",
 	"autoload" : {
 		"psr-4" : {
 			"evandro\\mailmanager\\" : ""
@@ -11,7 +11,19 @@
 	"require" : {
 		"php" : ">=5.4.0",
 		"yiisoft/yii2" : "~2.0.5",
-		"webvimark/module-user-management" : "^1.0",
+		"dtmonterrey/module-user-management" : "^2.0",
 		"yiisoft/yii2-swiftmailer" : "~2.0"
+	},
+	"repositories" : [
+		{
+			"type": "git",
+			"url": "https://github.com/dtmonterrey/user-management",
+			"name": "https://github.com/dtmonterrey/user-management"
+		}
+	],
+	"config": {
+		"allow-plugins": {
+			"yiisoft/yii2-composer": true
+		}
 	}
 }

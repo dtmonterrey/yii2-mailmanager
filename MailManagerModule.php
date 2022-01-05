@@ -1,6 +1,6 @@
 <?php
 
-namespace evandro\mailmanager;
+namespace dtmonterrey\mailmanager;
 
 class MailManagerModule extends \yii\base\Module
 {

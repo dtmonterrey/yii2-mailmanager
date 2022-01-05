@@ -7,7 +7,7 @@
 
 namespace app\commands;
 
-use evandro\mailmanager\Mailer;
+use dtmonterrey\mailmanager\Mailer;
 use yii\console\Controller;
 
 /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace evandro\mailmanager;
+namespace dtmonterrey\mailmanager;
 
 class Mailer extends \yii\swiftmailer\Mailer
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace evandro\mailmanager\models;
+namespace dtmonterrey\mailmanager\models;
 
 use Yii;
 

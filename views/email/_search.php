@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model evandro\mailmanager\models\EmailSearch */
+/* @var $model dtmonterrey\mailmanager\models\EmailSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 

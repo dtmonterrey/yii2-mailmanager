@@ -1,8 +1,8 @@
 <?php
 
-namespace evandro\mailmanager;
+namespace dtmonterrey\mailmanager;
 
-use evandro\mailmanager\models\Email;
+use dtmonterrey\mailmanager\models\Email;
 use Yii;
 use yii\helpers\VarDumper;
 use yii\mail\MailerInterface;
