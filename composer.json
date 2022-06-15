@@ -3,7 +3,7 @@
 	"type" : "yii2-extension",
 	"autoload" : {
 		"psr-4" : {
-			"evandro\\mailmanager\\" : ""
+			"dtmonterrey\\mailmanager\\" : ""
 		}
 	},
 	"minimu-stability" : "stable",

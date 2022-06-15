@@ -3,8 +3,8 @@
 namespace dtmonterrey\mailmanager\controllers;
 
 use Yii;
-use evandro\mailmanager\models\Email;
-use evandro\mailmanager\models\EmailSearch;
+use dtmonterrey\mailmanager\models\Email;
+use dtmonterrey\mailmanager\models\EmailSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 

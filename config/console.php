@@ -2,7 +2,7 @@
 
 
 $config = [
-    'id' => 'evandro-mailmanager',
+    'id' => 'dtmonterrey-mailmanager',
     'basePath' => dirname(__DIR__),
     'version' => '0.3.1',
     'bootstrap' => ['log'],

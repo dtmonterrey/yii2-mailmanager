@@ -6,7 +6,7 @@ use yii\base\Model;
 use yii\data\ActiveDataProvider;
 
 /**
- * EmailSearch represents the model behind the search form about `evandro\mailmanager\models\Email`.
+ * EmailSearch represents the model behind the search form about `dtmonterrey\mailmanager\models\Email`.
  */
 class EmailSearch extends Email
 {
